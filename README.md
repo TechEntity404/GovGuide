@@ -71,23 +71,6 @@ GovGuide/
 │       ├── accessibility.js
 │       ├── app.js
 │       └── voice.js
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── FILE_MAP.md
-    ├── SECURITY.md
-    ├── SETUP.md
-    ├── TESTING.md
-    └── explanations/
-        ├── app_py.md
-        ├── ai_service_py.md
-        ├── index_html.md
-        ├── style_css.md
-        ├── app_js.md
-        ├── accessibility_js.md
-        ├── voice_js.md
-        └── demo_service_json.md
-```
-
 ## How It Works
 
 1. Flask serves the web page.
@@ -122,7 +105,6 @@ Then open:
 ## AI Usage
 
 Gemini is used for:
-
 - explaining complicated form fields in simpler language
 - simplifying official-style text
 - translating short English UI guidance into Hindi
