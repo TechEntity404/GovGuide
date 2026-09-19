@@ -65,12 +65,13 @@ GovGuide/
 ├── templates/
 │   └── index.html
 ├── static/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       ├── accessibility.js
-│       ├── app.js
-│       └── voice.js
+    ├── css/
+    │   └── style.css
+    └── js/
+        ├── accessibility.js
+        ├── app.js
+        └── voice.js
+
 ## How It Works
 
 1. Flask serves the web page.
@@ -84,17 +85,16 @@ GovGuide/
 9. Answers are temporarily saved in localStorage.
 10. The final screen is a demonstration only; nothing is submitted externally.
 
-## Setup
 
-See [`docs/SETUP.md`](docs/SETUP.md) for complete Windows instructions.
 
-Basic commands:
+#Basic commands:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Copy-Item .env.example .env
+Add Your API Key in .env file
 python app.py
 ```
 
@@ -137,18 +137,6 @@ Accessibility is part of the main interaction rather than a cosmetic setting. Th
 - plain-language explanations
 - clear validation messages
 
-## Screenshots
-
-Add hackathon screenshots here later, for example:
-
-```text
-screenshots/
-├── home.png
-├── accessibility-profile.png
-├── guided-form.png
-└── review.png
-```
-
 ## Limitations
 
 This is a prototype. It does not:
@@ -179,8 +167,6 @@ A future production version could add:
 
 ## Team Contribution
 
-Suggested four-person split:
-
 - **Teammate 1:** Flask backend + Gemini integration
 - **Teammate 2:** HTML/CSS UI + responsive design
 - **Teammate 3:** JavaScript form flow + localStorage + review
@@ -202,7 +188,3 @@ The codebase is intentionally simple so a beginner can understand and modify it.
 10. Complete the remaining fictional fields.
 11. Show the review screen and missing-information warning if desired.
 12. Click **Finish demo** and explain that nothing was submitted to a real government service.
-
-## License / Hackathon Note
-
-Use the project according to your hackathon's submission rules. Before publishing, replace placeholder team details and add your own screenshots.
