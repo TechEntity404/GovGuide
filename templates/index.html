@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GovGuide — an accessibility-first guided digital service prototype.">
+  <title>GovGuide Demo · Accessible Digital Services</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="GovGuide home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>
+          <strong>GovGuide</strong>
+          <small>Accessible digital service demo</small>
+        </span>
+      </a>
+
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#demo-service">Demo service</a>
+        <button class="text-button" id="open-settings" type="button">Accessibility</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Accessible India · Student Hackathon Prototype</p>
+          <h1>Make digital services easier to understand.</h1>
+          <p class="hero-lead">
+            GovGuide adds a simple, guided accessibility layer around complicated digital-service workflows.
+            It explains, speaks, translates and guides — while leaving decisions to the user.
+          </p>
+          <div class="notice" role="note">
+            <strong>Prototype / Demo</strong>
+            <span>GovGuide is not an official government portal and does not submit real applications.</span>
+          </div>
+          <div class="hero-actions">
+            <button class="primary-button" id="start-demo" type="button">Start demo</button>
+            <button class="secondary-button" id="read-hero" type="button">🔊 Read aloud</button>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="GovGuide highlights">
+          <div class="status-dot"><span></span> Accessibility-first</div>
+          <h2>One step at a time</h2>
+          <p>Reduce cognitive load with clear instructions, voice support, simple explanations and visible progress.</p>
+          <div class="mini-flow" aria-label="Guided workflow">
+            <span>Understand</span><i aria-hidden="true">→</i>
+            <span>Prepare</span><i aria-hidden="true">→</i>
+            <span>Complete</span><i aria-hidden="true">→</i>
+            <span>Review</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section muted-section" id="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>A guided layer, not an AI decision-maker.</h2>
+          <p>GovGuide helps a person understand a service before they fill it in.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><span>01</span>
+            <h3>Understand</h3>
+            <p>Start with a plain-language service introduction and estimated time.</p>
+          </article>
+          <article class="feature-card"><span>02</span>
+            <h3>Prepare</h3>
+            <p>See a simple document checklist before entering the form.</p>
+          </article>
+          <article class="feature-card"><span>03</span>
+            <h3>Complete</h3>
+            <p>Answer one question at a time with voice, text and help controls.</p>
+          </article>
+          <article class="feature-card"><span>04</span>
+            <h3>Review</h3>
+            <p>See missing information and review the answers before finishing the demo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo-service">
+      <div class="container app-shell">
+        <div class="app-topline">
+          <div>
+            <p class="eyebrow">GovGuide Demo</p>
+            <h2 id="service-title">Loading demo service…</h2>
+            <p id="service-description">Please wait while the demonstration configuration loads.</p>
+          </div>
+          <div class="demo-badge">Prototype / Demo</div>
+        </div>
+
+        <div id="global-status" class="status-message" role="status" aria-live="polite"></div>
+
+        <section class="screen active" id="screen-intro" aria-labelledby="intro-heading">
+          <div class="screen-header">
+            <div>
+              <p class="step-label">Step 1</p>
+              <h3 id="intro-heading">Understand the service</h3>
+            </div>
+            <span class="pill" id="estimated-time">—</span>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <h4>Who it is for</h4>
+              <p id="service-audience">—</p>
+            </div>
+            <div class="info-card">
+              <h4>What you need</h4>
+              <p>Student ID, income certificate, bank details and a photograph for this fictional demo.</p>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="primary-button" id="continue-profile" type="button">Continue</button>
+            <button class="secondary-button speak-button" data-target="#intro-heading" type="button">🔊 Read
+              aloud</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-profile" aria-labelledby="profile-heading" hidden>
+          <div class="screen-header">
+            <div>
+              <p class="step-label">Step 2</p>
+              <h3 id="profile-heading">How would you like to use GovGuide?</h3>
+            </div>
+          </div>
+
+          <div class="profile-grid">
+            <button class="profile-card" type="button" data-profile="voice"><span
+                class="profile-icon">🎙️</span><strong>Voice Guided</strong><small>Speech input + spoken
+                instructions.</small></button>
+            <button class="profile-card" type="button" data-profile="visual"><span
+                class="profile-icon">👁️</span><strong>Visual Assisted</strong><small>Larger text, buttons and stronger
+                contrast.</small></button>
+            <button class="profile-card" type="button" data-profile="simple"><span
+                class="profile-icon">🧩</span><strong>Simplified</strong><small>One question at a time and clearer
+                explanations.</small></button>
+            <button class="profile-card" type="button" data-profile="keyboard"><span
+                class="profile-icon">⌨️</span><strong>Keyboard Mode</strong><small>Focused keyboard navigation and
+                visible focus.</small></button>
+          </div>
+
+          <div class="setting-preview" id="profile-preview" role="status" aria-live="polite">You can change these
+            settings later.</div>
+
+          <div class="action-row">
+            <button class="secondary-button" id="back-to-intro" type="button">Back</button>
+            <button class="primary-button" id="continue-docs" type="button">Continue</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-docs" aria-labelledby="docs-heading" hidden>
+          <div class="screen-header">
+            <div>
+              <p class="step-label">Step 3</p>
+              <h3 id="docs-heading">Check your document readiness</h3>
+              <p>These are demonstration statuses only. GovGuide does not verify or upload documents.</p>
+            </div>
+          </div>
+
+          <div class="document-list" id="document-list"></div>
+
+          <div class="simple-ai-box">
+            <div>
+              <p class="eyebrow">AI simplifier demo</p>
+              <h4>Turn official-style text into simple language.</h4>
+              <p id="simplify-input-preview">Loading example…</p>
+            </div>
+            <div class="simple-ai-actions">
+              <button class="secondary-button" id="simplify-text" type="button">✨ Simplify with Gemini</button>
+              <button class="secondary-button" id="translate-demo" type="button">अ Hindi</button>
+            </div>
+            <p class="ai-output" id="ai-demo-output" aria-live="polite"></p>
+          </div>
+
+          <div class="action-row">
+            <button class="secondary-button" id="back-to-profile" type="button">Back</button>
+            <button class="primary-button" id="start-form" type="button">Start guided form</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-form" aria-labelledby="form-heading" hidden>
+          <div class="screen-header form-header">
+            <div>
+              <p class="step-label" id="form-step-label">Step 4</p>
+              <h3 id="form-heading">Complete your application</h3>
+              <p id="form-helper">One question at a time. You can go back and change an answer.</p>
+            </div>
+            <span class="pill" id="form-counter">1 / 8</span>
+          </div>
+
+          <div class="progress-track" aria-label="Form progress">
+            <div class="progress-bar" id="form-progress"></div>
+          </div>
+
+          <form id="guided-form" novalidate>
+            <div id="field-container"></div>
+
+            <div class="help-panel" id="field-help-panel" hidden>
+              <div>
+                <p class="eyebrow">Field help</p>
+                <p id="field-help-text"></p>
+                <p class="example-text" id="field-example"></p>
+              </div>
+              <div class="help-actions">
+                <button class="secondary-button" id="translate-help" type="button">Translate to Hindi</button>
+                <button class="secondary-button" id="speak-help" type="button">🔊 Read aloud</button>
+              </div>
+              <p class="translation-output" id="translation-output" aria-live="polite"></p>
+            </div>
+
+            <div class="voice-panel" id="voice-panel" hidden>
+              <div>
+                <strong>Voice input</strong>
+                <p id="voice-status">Use your microphone to answer this question, or type instead.</p>
+              </div>
+              <button class="secondary-button" id="start-listening" type="button">🎙️ Speak</button>
+            </div>
+
+            <div class="error-panel" id="field-error" role="alert" tabindex="-1" hidden></div>
+
+            <div class="action-row form-actions">
+              <button class="secondary-button" id="previous-field" type="button">Back</button>
+              <button class="secondary-button" id="field-help" type="button">❓ What does this mean?</button>
+              <button class="secondary-button" id="read-field" type="button">🔊 Read aloud</button>
+              <button class="primary-button" id="next-field" type="submit">Next</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="screen" id="screen-review" aria-labelledby="review-heading" hidden>
+          <div class="screen-header">
+            <div>
+              <p class="step-label">Step 5</p>
+              <h3 id="review-heading">Application review</h3>
+              <p>Review your information before finishing this demonstration.</p>
+            </div>
+          </div>
+
+          <div class="review-card" id="review-list"></div>
+          <div class="review-warning" id="review-warning" role="alert"></div>
+
+          <div class="action-row">
+            <button class="secondary-button" id="back-to-form" type="button">Back to form</button>
+            <button class="primary-button" id="finish-demo" type="button">Finish demo</button>
+          </div>
+        </section>
+
+        <section class="screen completion-screen" id="screen-complete" aria-labelledby="complete-heading" hidden>
+          <div class="complete-icon" aria-hidden="true">✓</div>
+          <p class="eyebrow">Demo complete</p>
+          <h3 id="complete-heading">You just completed an accessibility-first service journey.</h3>
+          <p>Nothing was submitted to a real government system. This prototype demonstrates how guidance, accessibility
+            controls, voice support and AI explanations can make digital-service workflows easier to understand.</p>
+          <div class="completion-actions">
+            <button class="primary-button" id="restart-demo" type="button">Restart demo</button>
+            <button class="secondary-button" id="read-complete" type="button">🔊 Read aloud</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>GovGuide</strong>
+        <p>Prototype demonstrating an accessibility-first approach to digital service workflows.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Home</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#demo-service">Demo</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="settings-modal" hidden>
+    <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Accessibility</p>
+          <h2 id="settings-title">Make GovGuide easier to use</h2>
+        </div>
+        <button class="icon-button" id="close-settings" type="button"
+          aria-label="Close accessibility settings">×</button>
+      </div>
+
+      <div class="settings-grid">
+        <button class="setting-toggle" data-setting="font-large" type="button"><strong>Large text</strong><span>Increase
+            reading size.</span></button>
+        <button class="setting-toggle" data-setting="high-contrast" type="button"><strong>High
+            contrast</strong><span>Increase visual distinction.</span></button>
+        <button class="setting-toggle" data-setting="large-controls" type="button"><strong>Larger
+            controls</strong><span>Make buttons and fields easier to target.</span></button>
+        <button class="setting-toggle" data-setting="more-spacing" type="button"><strong>More
+            spacing</strong><span>Increase space between key elements.</span></button>
+        <button class="setting-toggle" data-setting="reduced-motion" type="button"><strong>Reduced
+            motion</strong><span>Minimise non-essential animation.</span></button>
+      </div>
+
+      <div class="modal-footer">
+        <button class="secondary-button" id="reset-settings" type="button">Reset accessibility</button>
+        <button class="primary-button" id="close-settings-2" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>

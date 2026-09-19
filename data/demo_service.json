@@ -1,0 +1,127 @@
+{
+  "service": {
+    "name": "Student Scholarship Application",
+    "label": "GovGuide Demo",
+    "description": "Apply for financial assistance through a guided demonstration workflow.",
+    "estimated_time": "5–7 minutes",
+    "audience": "Students who want to understand a scholarship-style digital service workflow.",
+    "demo_notice": "Prototype demonstration — not an official government portal.",
+    "documents": [
+      {
+        "id": "student-id",
+        "name": "Student ID",
+        "description": "A school or college identity document.",
+        "status": "ready"
+      },
+      {
+        "id": "income-certificate",
+        "name": "Income Certificate",
+        "description": "A document showing the family's annual income.",
+        "status": "missing"
+      },
+      {
+        "id": "bank-details",
+        "name": "Bank details",
+        "description": "The bank account details requested by this fictional demo.",
+        "status": "ready"
+      },
+      {
+        "id": "photograph",
+        "name": "Photograph",
+        "description": "A recent passport-style photograph for the demo.",
+        "status": "need"
+      }
+    ],
+    "fields": [
+      {
+        "id": "fullName",
+        "label": "Full Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Example: Ananya Sharma",
+        "help": "Enter your name as you would like it to appear on the demonstration application.",
+        "example": "Ananya Sharma"
+      },
+      {
+        "id": "dateOfBirth",
+        "label": "Date of Birth",
+        "type": "date",
+        "required": true,
+        "help": "Enter your date of birth using the date picker.",
+        "example": "15 August 2007"
+      },
+      {
+        "id": "state",
+        "label": "State",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Delhi",
+          "Haryana",
+          "Uttar Pradesh",
+          "Rajasthan",
+          "Maharashtra",
+          "Other"
+        ],
+        "help": "Choose the state you want to use for this fictional demonstration.",
+        "example": "Haryana"
+      },
+      {
+        "id": "category",
+        "label": "Category",
+        "type": "select",
+        "required": true,
+        "options": [
+          "General",
+          "OBC",
+          "SC",
+          "ST",
+          "Prefer not to say"
+        ],
+        "help": "Choose one option for this demonstration. This prototype does not decide eligibility.",
+        "example": "General"
+      },
+      {
+        "id": "annualIncome",
+        "label": "Annual Family Income",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 100000000,
+        "placeholder": "Example: 240000",
+        "help": "The total amount of money earned by your family in one year.",
+        "example": "₹2,40,000"
+      },
+      {
+        "id": "bankAccount",
+        "label": "Bank Account Number",
+        "type": "text",
+        "required": true,
+        "inputmode": "numeric",
+        "pattern": "[0-9]{6,18}",
+        "placeholder": "Demo value: 123456789012",
+        "help": "Enter a fictional account number for the demonstration. Do not use a real bank account number.",
+        "example": "123456789012"
+      },
+      {
+        "id": "photograph",
+        "label": "Photograph",
+        "type": "file",
+        "required": true,
+        "accept": "image/*",
+        "help": "Choose any non-sensitive demo image from your computer. The prototype only records the file name and does not upload it.",
+        "example": "demo-photo.jpg"
+      },
+      {
+        "id": "incomeCertificate",
+        "label": "Income Certificate",
+        "type": "file",
+        "required": true,
+        "accept": ".pdf,image/*",
+        "help": "Choose a fictional demo certificate file if you have one. The prototype only records the file name and does not upload or verify it.",
+        "example": "demo-income-certificate.pdf"
+      }
+    ],
+    "simple_text_demo": "Applicants shall furnish documentary evidence substantiating annual household income."
+  }
+}
